@@ -1,6 +1,6 @@
 import DrinksList from "@/components/DrinksList";
 
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
+const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
 
 const fetchDrinks = async () => {
     await new Promise(resolve => setTimeout(resolve, 1000))
