@@ -14,9 +14,9 @@ const TaskList = async () => {
         {tasks.map(({id, content, completed}) => (
             <li key={id}
                 className="flex justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lg shadow-lg">
-                <h2 className={`text-lg capitalize ${completed ? '' : null}`}>{content}</h2>
+                <h2 className={`text-lg capitalize ${completed ? 'bg-green-500' : null}`}>{content}</h2>
                 <div className="flex gap-6 items-center">
-                    <Link href={`/tasks/${id}`} className='btn btn-accent btn-xs'>
+                    <Link href={`/tasks/${id}`} className='btn btn-primary rounded-xs p-1 bg-green-500'>
                         Edit
                     </Link>
                     <DeleteForm id={id}/>
