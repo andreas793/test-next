@@ -6,8 +6,7 @@ const links  = [
     {href: '/product', label: 'Product'},
     {href: '/client', label: 'Client'},
     {href: '/drinks', label: 'Drinks'},
-    {href: '/prisma', label: 'Prisma'},
-    {href: '/query', label: 'Query'},
+    {href: '/prisma-example', label: 'Prisma example'},
     {href: '/tasks', label: 'Tasks'},
 ]
 
