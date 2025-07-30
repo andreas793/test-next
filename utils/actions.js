@@ -4,7 +4,7 @@ import prisma from "@/utils/db";
 import {revalidatePath} from "next/cache";
 
 export const getAllTasks = async () => {
-    return await prisma.Task.findMany({
+    return prisma.task.findMany({
         orderBy: {
             createdAt: 'desc',
         }
@@ -19,4 +19,12 @@ export const createTask = async (formData) => {
         }
     });
     revalidatePath('/tasks ')
+}
+
+export const deleteTask = async (formData) => {
+    const id = formData.get('id');
+    await prisma.task.delete({
+        where: {id},
+    });
+    revalidatePath('/tasks ');
 }

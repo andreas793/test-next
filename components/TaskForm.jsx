@@ -9,7 +9,7 @@ const TaskForm = () => {
                    name='content'
                    required
             />
-            <button type="submit" className=" btn btn-primary rounded-xs p-1 bg-blue-500">
+            <button type="submit" className="btn btn-primary rounded-xs p-1 bg-blue-500">
                 create
             </button>
         </div>
