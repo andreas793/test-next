@@ -1,7 +1,9 @@
 "use client"
 
 import {createTaskCustom} from "@/utils/actions";
-import {useFormState, useFormStatus} from "react-dom";
+import {useFormStatus} from "react-dom";
+import {useActionState, useEffect} from "react";
+import toast from "react-hot-toast";
 
 const SubmitBtn = () => {
 
@@ -20,10 +22,19 @@ const initialState = {
 
 const TaskFormCustom = () => {
 
-    const [state, formAction] = useFormState(createTaskCustom, initialState);
+    const [state, formAction] = useActionState(createTaskCustom, initialState);
+
+    useEffect(()=>{
+        if(state.message === "error"){
+            toast.error('there was an error');
+            return;
+        }
+        if(state.message){
+            toast.success('Task created');
+        }
+    },[state])
 
     return <form action={formAction}>
-        {state.message ? <p>{state.message}</p> : null}
         <div className="flex join w-full border">
             <input type="text"
                    className="input input-bordered w-full"
